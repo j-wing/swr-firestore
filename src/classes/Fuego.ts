@@ -1,4 +1,5 @@
 import * as firebase from 'firebase/app'
+import * as firestore from 'firebase/firestore'
 
 // import 'firebase/firestore'
 // import 'firebase/auth'
@@ -12,9 +13,7 @@ export class Fuego {
   public functions: typeof firebase.functions
   public storage: typeof firebase.storage
   constructor(config: Config) {
-    this.db = !firebase.apps.length
-      ? firebase.initializeApp(config).firestore()
-      : firebase.app().firestore()
+    this.db = firestore.getFirestore()
     this.auth = firebase.auth
     this.functions = firebase.functions
     this.storage = firebase.storage
