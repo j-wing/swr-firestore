@@ -13,7 +13,9 @@ export class Fuego {
   public functions: typeof firebase.functions
   public storage: typeof firebase.storage
   constructor(config: Config) {
+    console.log("yo")
     this.db = firestore.getFirestore()
+    console.log(db)
     this.auth = firebase.auth
     this.functions = firebase.functions
     this.storage = firebase.storage
